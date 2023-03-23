@@ -13,6 +13,7 @@ namespace Laboratorio04
             int c;
             c = a + b;
             return c ;
+
         }
     }
 }

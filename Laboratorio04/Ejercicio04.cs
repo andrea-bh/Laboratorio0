@@ -8,20 +8,20 @@ namespace Laboratorio04
 {
     public class Ejercicio04
     {
-        public int[] CalcularBilletes(int cantidad = [0, 0, 0, 0, 0], int billetes = [100, 50, 20, 5, 1])
+        public int[] CalcularBilletes(int cantidad, int [] billetes)
+
         {
-            Console.WriteLine("Ingrese una cantidad de dinero");
-
-            cantidad = Convert.ToInt32(Console.ReadLine());
-
-            if (cantidad >= 100)
+            
+            int[] resultado = new int[billetes.Length];
+            for (int i = 0; i < billetes.Length; i++)
             {
-                int div = cantidad % 100;
+               resultado[i] = cantidad / billetes[i];
+                cantidad = cantidad - (resultado[i] * billetes[i]);
                 
 
             }
 
-            return new int[] {};
+            return resultado;
         }
     }
 }

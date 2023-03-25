@@ -8,14 +8,48 @@ namespace Laboratorio04
 {
     public class Ejercicio03
     {
-        public string Sumar(string num1, string num2) 
+        public string Sumar(string num1, string num2)
         {
-            decimal suma = 0;
-            if (Convert.ToDecimal(num1) >= 0 && Convert.ToDecimal(num2) >= 0);
+
+            int i = num1.Length - 1;
+            int j = num2.Length - 1;
+
+            string resultado = "";
+            int residuo = 0;
+
+            while (i >= 0 && j >= 0)
             {
-                suma = Convert.ToDecimal(num1) + Convert.ToDecimal(num2);
+
+                int suma = (num1[i] - '0') + (num2[i] - '0');
+
+                resultado = (suma % 10) + resultado;
+                residuo = suma / 10;
+
+                i--;
+                j--;
             }
-            return Convert.ToString(suma);       
+            while (i >= 0)
+            {
+                int suma = residuo + (num1[i] - '0');
+                resultado = (suma % 10) + resultado;
+                residuo = suma / 10;
+                i--;
+
+            }
+            while (j >= 0)
+            {
+                int suma = residuo + (num1[i] - '0');
+                resultado = (suma % 10) + resultado;
+                residuo = suma / 10;
+                j--;
+            }
+
+            if  (residuo > 0 )
+            {
+                resultado = residuo + resultado;
+
+            }
+            return resultado;       
         }
     }
 }

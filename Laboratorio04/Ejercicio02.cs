@@ -14,6 +14,7 @@ namespace Laboratorio04
             foreach(int num in nums)
             {
                 suma = suma + num;
+
             }
 
            double promedio = suma / nums.Length;

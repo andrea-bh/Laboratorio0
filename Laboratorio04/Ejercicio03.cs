@@ -20,7 +20,7 @@ namespace Laboratorio04
             while (i >= 0 && j >= 0)
             {
 
-                int suma = (num1[i] - '0') + (num2[i] - '0');
+                int suma = residuo + (num1[i] - '0') + (num2[j] - '0');
 
                 resultado = (suma % 10) + resultado;
                 residuo = suma / 10;
@@ -38,7 +38,7 @@ namespace Laboratorio04
             }
             while (j >= 0)
             {
-                int suma = residuo + (num1[i] - '0');
+                int suma = residuo + (num2[j] - '0');
                 resultado = (suma % 10) + resultado;
                 residuo = suma / 10;
                 j--;

@@ -33,8 +33,6 @@ namespace Laboratorio04
                 monto = monto - (total[i] * billetesdeno);
             }
 
-
-            Console.ReadKey();
             return total;
         }
     }
